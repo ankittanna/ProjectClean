@@ -1,12 +1,15 @@
-angular.module('ProjectClean.controllers')
+(function(){
+    'use strict';
+    angular.module('ProjectClean.controllers')
 
-.controller('SignUpCtrl', function($scope, $ionicModal, $timeout, $state) {
+    .controller('SignUpCtrl', function($scope, $ionicModal, $timeout, $state) {
 
 
-  this.registerUser = function(){
+      this.registerUser = function(){
 
-    // Upon successful registration take the user to login page
-    $state.go('login');
-  };
+        // Upon successful registration take the user to login page
+        $state.go('login');
+      };
 
-});
+    });
+})();

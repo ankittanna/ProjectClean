@@ -1,4 +1,9 @@
-angular.module('ProjectClean.directives', [])
+(function(){
+	'use strict';
+
+	angular.module('ProjectClean.directives', [])
 	.directive('sampleDirective', function() {
 	  
 	});
+
+})();

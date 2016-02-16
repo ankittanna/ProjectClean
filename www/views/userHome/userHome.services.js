@@ -1,18 +1,22 @@
-function userHomePageServices($http) {
-    'use strict';
-    // config for notification
-    this.baseUrl = '';
+(function(){
+	'use strict';
+	function userHomePageServices($http) {
+	    'use strict';
+	    // config for notification
+	    this.baseUrl = '';
 
-    this.registerUser = function(){
+	    this.registerUser = function(){
 
-    };
+	    };
 
-    return {
-        registerUser: this.registerUser
-    };
-}
+	    return {
+	        registerUser: this.registerUser
+	    };
+	}
 
-angular.module('ProjectClean.services')
-    .factory('UserHomePageServices', userHomePageServices);
+	angular.module('ProjectClean.services')
+	    .factory('UserHomePageServices', userHomePageServices);
 
-userHomePageServices.$inject = ['$http'];
+	userHomePageServices.$inject = ['$http'];
+
+})();

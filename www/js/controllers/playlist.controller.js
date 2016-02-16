@@ -1,4 +1,7 @@
-angular.module('ProjectClean.controllers')
+(function(){
+	'use strict';
+	angular.module('ProjectClean.controllers')
+		.controller('PlaylistCtrl', function($scope, $stateParams) {
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
-});
+		});
+})();

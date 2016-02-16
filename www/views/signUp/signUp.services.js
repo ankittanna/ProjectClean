@@ -1,18 +1,22 @@
-function signUpServices($http) {
-    'use strict';
-    // config for notification
-    this.baseUrl = '';
+(function(){
+	'use strict';
+	function signUpServices($http) {
+	    'use strict';
+	    // config for notification
+	    this.baseUrl = '';
 
-    this.registerUser = function(){
+	    this.registerUser = function(){
 
-    };
+	    };
 
-    return {
-        registerUser: this.registerUser
-    };
-}
+	    return {
+	        registerUser: this.registerUser
+	    };
+	}
 
-angular.module('ProjectClean.services')
-    .factory('SignUpServices', signUpServices);
+	angular.module('ProjectClean.services')
+	    .factory('SignUpServices', signUpServices);
 
-signUpServices.$inject = ['$http'];
+	signUpServices.$inject = ['$http'];
+
+})();

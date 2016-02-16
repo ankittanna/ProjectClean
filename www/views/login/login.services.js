@@ -1,18 +1,22 @@
-function loginServices($http) {
-    'use strict';
-    // config for notification
-    this.baseUrl = '';
+(function(){
+	'use strict';
+	function loginServices($http) {
+	    'use strict';
+	    // config for notification
+	    this.baseUrl = '';
 
-    this.authenticateUser = function(){
+	    this.authenticateUser = function(){
 
-    };
+	    };
 
-    return {
-        authenticateUser: this.authenticateUser
-    };
-}
+	    return {
+	        authenticateUser: this.authenticateUser
+	    };
+	}
 
-angular.module('ProjectClean.services')
-    .factory('LoginServices', loginServices);
+	angular.module('ProjectClean.services')
+	    .factory('LoginServices', loginServices);
 
-loginServices.$inject = ['$http'];
+	loginServices.$inject = ['$http'];
+
+})();

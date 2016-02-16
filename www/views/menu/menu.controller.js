@@ -1,5 +1,7 @@
-angular.module('ProjectClean.controllers')
+(function(){
+    'use strict';
+    angular.module('ProjectClean.controllers')
+    .controller('MenuCtrl', function($scope, $ionicModal, $timeout) {
 
-.controller('MenuCtrl', function($scope, $ionicModal, $timeout) {
-
-});
+    });
+})();
