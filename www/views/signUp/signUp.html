@@ -1,5 +1,72 @@
 <ion-view view-title="Sign Up">
+<ion-header-bar>
+    <h1 class="title">Sign Up</h1>
+  </ion-header-bar>
   <ion-content>
+
+    <form name="signUpForm" ng-submit="signUp.signUp(signUpForm.$valid)" novalidate autocomplete="off">
+      <fieldset>
+        <!-- First Name -->
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input type="text" id="firstName" name="firstName" class="form-control" ng-model="signUp.firstName" placeholder="First Name" required ng-pattern="/^[a-zA-Z]*$/">
+          <div ng-messages="signUpForm.firstName.$error" role="alert">
+            <p class="error-text" ng-show="signUpForm.firstName.$error.required && !signUpForm.firstName.$pristine" ng-message="required">First name is required.</p>
+            <p class="error-text" ng-show="signUpForm.firstName.$error.pattern && !signUpForm.firstName.$pristine" ng-message="required">First name has invalid characters.</p>
+          </div>
+        </div>
+
+        <!-- Last Name -->
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input type="text" id="lastName" name="lastName" class="form-control" ng-model="signUp.lastName" placeholder="Last Name" required ng-pattern="/^[a-zA-Z]*$/">
+          <div ng-messages="signUpForm.lastName.$error" role="alert">
+            <p class="error-text" ng-show="signUpForm.lastName.$error.required && !signUpForm.lastName.$pristine" ng-message="required">Last name is required.</p>
+            <p class="error-text" ng-show="signUpForm.lastName.$error.pattern && !signUpForm.lastName.$pristine" ng-message="required">Last name has invalid characters.</p>
+          </div>
+        </div>
+
+        <!-- Mobile Number -->
+        <div class="form-group">
+          <label for="mobileNumber">Mobile Number</label>
+          <input type="number" id="mobileNumber" name="mobileNumber" class="form-control" ng-model="signUp.mobileNumber" placeholder="Mobile Number" required ng-pattern="/^[0-9]*$/">
+          <div ng-messages="signUpForm.mobileNumber.$error" role="alert">
+            <p class="error-text" ng-show="signUpForm.mobileNumber.$error.required && !signUpForm.mobileNumber.$pristine" ng-message="required">Mobile Number is required.</p>
+            <p class="error-text" ng-show="signUpForm.mobileNumber.$error.pattern && !signUpForm.mobileNumber.$pristine" ng-message="required">Mobile Number has invalid characters.</p>
+          </div>
+        </div>
+
+        <!-- Email Address -->
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" ng-model="signUp.email" placeholder="Email" required ng-pattern="/^[a-zA-Z@._-]*$/">
+          <div ng-messages="signUpForm.email.$error" role="alert">
+            <p class="error-text" ng-show="signUpForm.email.$error.required && !signUpForm.email.$pristine" ng-message="required">Email Address is required.</p>
+            <p class="error-text" ng-show="signUpForm.email.$error.pattern && !signUpForm.email.$pristine" ng-message="required">Email has invalid characters.</p>
+            <p class="error-text" ng-show="!signUpForm.email.$valid && !signUpForm.email.$pristine" ng-message="required">Email is invalid.</p>
+          </div>
+        </div>
+        
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" class="form-control" ng-model="signUp.password" placeholder="Password" required ng-pattern="/^*$/" minlength=8>
+          <div ng-messages="signUpForm.password.$error" role="alert">
+            <p class="error-text" ng-show="signUpForm.password.$error.required && !signUpForm.password.$pristine" ng-message="required">Password is required.</p>
+            <p class="error-text" ng-show="signUpForm.password.$error.pattern && !signUpForm.password.$pristine" ng-message="required">Password has invalid characters.</p>
+            <p class="error-text" ng-show="!signUpForm.password.$valid && !signUpForm.password.$pristine" ng-message="required">Minimum 8 characters password required.</p>
+          </div>
+        </div>
+      </fieldset>
+      <div class="list">
+        <label class="item">
+          <button type="submit" class="button button-block button-assertive">Sign Up</button>
+          <button class="button button-block button-balanced" ng-click="signUp.registerUser()">Back to Sign In</button>
+        </label>
+      </div>
+    </form>
+
+
     <form>
       <div class="list">
         <label class="item item-input">

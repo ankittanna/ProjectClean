@@ -1,1 +1,8 @@
 /* Empty. Add your own CSS if you like */
+
+/* Form Error Text */
+.error-text{
+	color:red;
+	font-weight: light;
+	font-style: italic;
+}
