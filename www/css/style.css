@@ -6,3 +6,20 @@
 	font-weight: light;
 	font-style: italic;
 }
+
+.successCheck{
+	color:#33cd5f;
+	font-size: 30px;
+	text-align: center;
+}
+
+.errorCross{
+	color:#ef473a;
+	font-size: 30px;
+	text-align: center;
+}
+
+.textAlignCenter
+{
+	text-align: center;
+}

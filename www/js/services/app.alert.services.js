@@ -7,7 +7,7 @@
 	    this.throwError = function(errorTitle, errorDescription){
 	    	var alertError = $ionicPopup.show({
 			    title: errorTitle,
-			    template: errorDescription,
+			    template: '<div class="textAlignCenter"><p><i class="icon ion-close-circled errorCross"></i></p>' + errorDescription + '</div>',
 			    buttons: [
 			      { 
 			      	text: 'Ok', 
@@ -22,7 +22,7 @@
 	    this.showMessage = function(messageTitle, messageDescription){
 	    	var alertError = $ionicPopup.show({
 			    title: messageTitle,
-			    template: messageDescription,
+			    template: '<div class="textAlignCenter"><p><i class="icon ion-checkmark-circled successCheck"></i></p>' + messageDescription + '</div>',
 			    buttons: [
 			      { 
 			      	text: 'Ok', 
