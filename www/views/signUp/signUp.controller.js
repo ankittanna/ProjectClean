@@ -2,7 +2,7 @@
     'use strict';
     angular.module('ProjectClean.controllers')
 
-    .controller('SignUpCtrl', function($scope, $state, SignUpServices, AppAlertServices) {
+    .controller('SignUpCtrl', function($scope, $state, SignUpServices, AppAlertServices, LoggerServices, toastr) {
       /* Sign Up form properties */
       this.newUser = {};
       this.newUser.firstName = '';
@@ -18,6 +18,7 @@
       this.signUpError = '';
 
       this.signUp = function(isValid){
+        toastr.success('Hello world!', 'Toastr fun!');
       	if(isValid === true)
       	{
       		this.newUser.username = this.newUser.mobileNumber.toString();

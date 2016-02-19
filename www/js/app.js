@@ -13,10 +13,11 @@ angular.module('ProjectClean', [
   // Custom Modules
   'ProjectClean.controllers', 
   'ProjectClean.services', 
-  'ProjectClean.directives'
+  'ProjectClean.directives',
 
   // Third Party Modules
-
+  'LocalStorageModule',
+  'toastr'
   ])
 
 .run(function($ionicPlatform) {

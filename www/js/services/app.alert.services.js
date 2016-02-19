@@ -40,7 +40,7 @@
 	    };
 	}
 
-	angular.module('ProjectClean.services', [])
+	angular.module('ProjectClean.services')
 	    .factory('AppAlertServices', appAlertServices);
 
 	appAlertServices.$inject = ['$http', '$ionicPopup'];

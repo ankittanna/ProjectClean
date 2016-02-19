@@ -1,7 +1,7 @@
-/* (function(){
+(function(){
 	// Config HTTP Error Handling
-	angular.module('ProjectClean.config').config(function($httpProvider){
-				$httpProvider.interceptors.push(function($q, $location){
+	angular.module('ProjectClean.configs', []).config(function($httpProvider){
+				 $httpProvider.interceptors.push(function($q, $location){
 							return {
 					          responseError: function (rejection) {
 					            switch (rejection.status) {
@@ -18,6 +18,6 @@
 					            return $q.reject(rejection);
 					          }
 					        };
-						});
-			});
-})(); */
+						}); 
+		});
+})();
