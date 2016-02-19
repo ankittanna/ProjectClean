@@ -3,15 +3,31 @@
 	function signUpServices($http) {
 	    'use strict';
 	    // config for notification
-	    this.baseUrl = '';
+	    var baseUrl = 'http://localhost:3000/api';
 
-	    this.registerUser = function(){
-
+	    this.registerUser = function(userData){
+	    	console.log("Sign Up Data " + JSON.stringify(userData));
+	    	var url = baseUrl + '/auth/signup'
+	    	return $http({
+	            method: 'POST',
+	            url: url,
+	            headers: {
+	                'Content-Type': 'application/json'
+	            },
+	            data: userData
+	        }).then(function(response) {
+	        	response.status = 200;
+	            return response.data;
+	        },
+	        function(error){
+	        	return error;
+	        });
 	    };
 
 	    return {
 	        registerUser: this.registerUser
 	    };
+
 	}
 
 	angular.module('ProjectClean.services')

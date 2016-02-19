@@ -4,7 +4,20 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('ProjectClean', ['ionic', 'ProjectClean.controllers', 'ProjectClean.services', 'ProjectClean.directives', ])
+angular.module('ProjectClean', [
+  // Main Module
+  'ionic', 
+  
+  // AngularJS Modules
+
+  // Custom Modules
+  'ProjectClean.controllers', 
+  'ProjectClean.services', 
+  'ProjectClean.directives'
+
+  // Third Party Modules
+
+  ])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
