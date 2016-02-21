@@ -16,8 +16,8 @@
 	            },
 	            data: userData
 	        }).then(function(response) {
-	        	response.data.status = 200;
-	            return response.data;
+	        	response.status = 200;
+	            return response;
 	        },
 	        function(error){
 	        	return error;
