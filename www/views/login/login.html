@@ -3,23 +3,37 @@
     <h1 class="title">Login</h1>
   </ion-header-bar>
   <ion-content>
-    <form>
       <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Username</span>
-          <input type="text" ng-model="login.username">
-        </label>
-        <label class="item item-input">
-          <span class="input-label">Password</span>
-          <input type="password" ng-model="login.password">
-        </label>
-        <label>
-          <button class="button button-block button-balanced" ng-click="login.loginUser()">Log in</button>
-        </label>
-        <label>
-          <button class="button button-block button-assertive" ng-click="login.goToSignUp()">Sign Up</button>
-        </label>
+        <form name="signInForm" ng-submit="login.loginUser(signInForm.$valid)" novalidate autocomplete="off">
+          <fieldset>
+        <!-- Mobile Number is -->
+          <div class="form-group">
+            <label for="mobileNumber">Mobile Number</label>
+            <input type="number" id="mobileNumber" name="mobileNumber" class="form-control" ng-model="login.existingUser.username" placeholder="Mobile Number" required ng-pattern="/^[0-9]*$/">
+            <div ng-messages="signInForm.mobileNumber.$error" role="alert">
+              <p class="error-text" ng-show="signInForm.mobileNumber.$error.required && !signInForm.mobileNumber.$pristine" ng-message="required">Mobile Number/Username is required.</p>
+              <p class="error-text" ng-show="signInForm.mobileNumber.$error.pattern && !signInForm.mobileNumber.$pristine" ng-message="required">Mobile Number/Username has invalid characters.</p>
+            </div>
+          </div>
+
+          <!-- Password -->
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" class="form-control" ng-model="login.existingUser.password" placeholder="Password" required ng-pattern="/^[a-zA-Z0-9@._-]*$/" minlength=8>
+            <div ng-messages="signInForm.password.$error" role="alert">
+              <p class="error-text" ng-show="signInForm.password.$error.required && !signInForm.password.$pristine" ng-message="required">Password is required.</p>
+              <p class="error-text" ng-show="signInForm.password.$error.pattern && !signInForm.password.$pristine" ng-message="required">Password has invalid characters.</p>
+              <!--<p class="error-text" ng-show="!signInForm.password.$valid && !signInForm.password.$pristine" ng-message="required">Minimum 8 characters password required.</p>-->
+            </div>
+          </div>
+          <label>
+            <button type="submit" class="button button-block button-balanced">Log in</button>
+          </label>
+          <label>
+            <button class="button button-block button-assertive" ng-click="login.goToSignUp()">Sign Up</button>
+          </label>
+        </fieldset>
+      </form>
       </div>
-    </form>
   </ion-content>
 </ion-view>

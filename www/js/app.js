@@ -63,6 +63,14 @@ angular.module('ProjectClean', [
     templateUrl: 'views/menu/menu.html',
     controller: 'MenuCtrl'
   })
+  .state('app.userHomePage', {
+      url: '/userHomePage',
+      views: {
+        'menuContent': {
+          templateUrl: 'views/userHome/userHome.html'
+        }
+      }
+    })
   .state('app.browse', {
       url: '/browse',
       views: {

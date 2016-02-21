@@ -50,5 +50,10 @@
       	}
       };
 
+
+      this.goToSignIn = function(){
+          $state.go('login');
+      };
+
     });
 })();
